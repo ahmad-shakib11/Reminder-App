@@ -3,6 +3,49 @@
     Home
     {% endblock %}
 {% block content %}
-        <h1 align="center">This is Home Page</h1>
+
+
+
+
+        <div class="container">
+            <div class="col">
+                <div class="title">
+                    <p>Reminder App</p>
+                </div>
+
+
+            <!-- add django loop for box class. this will add box according to user reminders    -->
+                <div class="box">
+                    <!-- use django to add title and date, time  -->
+                    <h4>Title</h4><br>
+                    <p>
+                        Date : Date <br>
+                        Time : Time <br>
+                    </p>
+
+                    <center>
+                        <input type="checkbox" name="done" id="done">
+                        <label for="checkbox">Mark as done</label>
+                    </center>
+
+                </div>
+
+                <!-- use this button to add new reminder -->
+                <a class="fixedButton" href="{% url 'createnewreminder' %}">
+                    <div class="roundedFixedBtn"><i class="fa-solid fa-plus"></i></div>
+                </a>
+                <div class="bg">
+                    <img src="images/homebg.png" alt="">
+                </div>
+
+            </div>
+        </div>
+
+
+
+
+</body>
+</html>
+        <h1 align="center"></h1>
      {% endblock %}
 

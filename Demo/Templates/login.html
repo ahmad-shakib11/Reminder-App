@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Login</title>
+</head>
+<body>
+
+
+  <form method="POST">
+      <fieldset>
+          {% csrf_token %}
+          {{ form }}
+      </fieldset>
+      <button>
+          Login
+
+      </button>
+  </form>
+</body>
+</html>

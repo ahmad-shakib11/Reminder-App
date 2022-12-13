@@ -1,8 +1,8 @@
 <!DOCTYPE html>
 <html>
 <head>
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<style>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style>
 body {
   margin: 0;
   font-family: Arial, Helvetica, sans-serif;
@@ -22,30 +22,102 @@ body {
   font-size: 17px;
 }
 
-.topnav a:hover {
-  background-color: #ddd;
+.topnav a.active {
+  background-color: brown;
   color: black;
 }
 
-.topnav a.active {
-  background-color: #04AA6D;
+.topnav a:hover {
+  background-color: orange;
   color: white;
 }
-</style>
+My Drive
+*{
+    margin: 0;
+    padding: 0;
+    font-family: 'Poppins', sans-serif;
+    box-sizing: border-box;
+}
+
+
+body,html{
+    scroll-behavior: smooth;
+    background-color: rgba(208, 208, 208);
+}
+
+.container{
+    max-width: 500px;
+    width: 100%;
+    margin: auto;
+}
+
+.col{
+    height: 100vh;
+    background-color: aliceblue;
+    width: inherit;
+}
+
+.title{
+    background-color: aqua;
+    text-align: center;
+    font-size: 25px;
+    font-weight: 700;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+}
+
+.box{
+    border: 1px outset #444444ac;
+    background-color: rgb(216, 216, 216);
+    margin-top: 10px;
+    padding: 20px 0px 20px 40px;
+    border-radius:8px;
+}
+
+.fixedButton{
+    position: fixed;
+    bottom: 10px;
+    right: 530px;
+    padding: 20px;
+}
+.roundedFixedBtn{
+    height: 60px;
+    line-height: 60px;
+    width: 60px;
+    font-size: 2em;
+    font-weight: bold;
+    border-radius: 50%;
+    background-color: #0b190c;
+    color: white;
+    text-align: center;
+    cursor: pointer;
+}
+
+.bg img{
+    position: relative;
+    margin-top: 60%;
+    height: 260px;
+    left: 50px;
+    width: min-content;
+
+}
+    </style>
 </head>
 <body>
 
 <div class="topnav">
-  <a class="active" href="#home">Home</a>
-  <a href="#news">News</a>
-  <a href="#contact">Contact</a>
-  <a href="#about">About</a>
+    <a class="active" href="{% url 'home' %}">Home</a>
+    <a href="{% url 'createnewreminder' %}">Create New Reminder</a>
+
+
 </div>
 
 <div style="padding-left:16px">
- {% block content %}
+    {% block content %}
 
- {% endblock content %}
+    {% endblock content %}
 </div>
 
 </body>

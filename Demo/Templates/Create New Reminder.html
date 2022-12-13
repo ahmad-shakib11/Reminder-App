@@ -3,5 +3,63 @@
     Create New Reminder
     {% endblock %}
 {% block content %}
-        <h1 align="center">This is Create New Reminder Page</h1>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="newRemstyle.css">
+    <link rel="stylesheet" href="path/to/font-awesome/css/font-awesome.min.css">
+    <script src="https://kit.fontawesome.com/5ef0af155c.js" crossorigin="anonymous"></script>
+    <title>home</title>
+</head>
+<body>
+
+
+
+
+        <div class="container">
+            <div class="col">
+                <div class="title">
+                    <p>Create New Reminder</p>
+                </div>
+
+
+            <!-- add django loop for box class. this will add box according to user reminders    -->
+                <div class="box">
+                    <!-- use django to add title and date, time  -->
+                    <label for="title"> Title:</label>
+                    <input type="text" id="title" name="title"><br>
+                    <label for="date">Date:</label>
+                    <input type="date" id="date" name="date"><br>
+                    <label for="time">Time:</label>
+                    <input type="time" id="time" name="time"><br>
+
+
+                    <center>
+                    <a href="{% url 'home' %}">
+                        <button class="submit">
+                            Submit
+                        </button>
+                    </a>
+                    </center>
+
+                </div>
+
+                <a href="{% url 'home' %}">
+                    <button id='submit' class="submit">
+                        Cancel
+                    </button>
+                </a>
+                </center>
+            </div>
+        </div>
+
+
+
+
+</body>
+</html>
+        <h1 align="center"></h1>
      {% endblock %}

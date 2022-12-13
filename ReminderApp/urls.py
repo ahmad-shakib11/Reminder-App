@@ -15,15 +15,21 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
-import Demo.views
+import Demo.views as Demo_views
+import django.contrib.auth.views as auth_views
+from django.conf import settings
+from django.conf.urls.static import static
+
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('Homepage/', Demo.views.HomePage),
-    path('Create New Reminder/', Demo.views.CreateNewReminder),
-    path('Title/', Demo.views.Title),
-    path('Date/', Demo.views.Date),
-    path('Time/', Demo.views.Time),
-    path('Mark as done/', Demo.views.Markasdone),
-    path('Settings/', Demo.views.Settings),
-
-]
+    path('', Demo_views.HomePage,name='home'),
+    path('Create New Reminder/', Demo_views.CreateNewReminder,name='createnewreminder'),
+    path('Title/', Demo_views.Title,name='title'),
+    path('Date/', Demo_views.Date,name='date'),
+    path('Time/', Demo_views.Time,name='time'),
+    path('Mark as done/', Demo_views.Markasdone,name='markasdone'),
+    path('Settings/', Demo_views.Settings,name='settings'),
+    path('register/',Demo_views.register),
+    path('login/',auth_views.LoginView.as_view(template_name='login.html')),
+    ]
++ static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
